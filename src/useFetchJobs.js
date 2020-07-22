@@ -54,7 +54,7 @@ export default function useFetchJobs (params, page) {
         params: { markdown: true, page: page + 1, ...params }
       })
       .then(res => {
-        dispatch({ type: ACTIONS.ACTIONS.UPDATE_HAS_NEXT_PAGE, payload: { hasNextPage: res.data.length !== 0 } })
+        dispatch({ type: ACTIONS.UPDATE_HAS_NEXT_PAGE, payload: { hasNextPage: res.data.length !== 0 } })
       })
       .catch(e => {
         if (axios.isCancel(e)) return
